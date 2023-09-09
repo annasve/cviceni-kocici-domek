@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 ::after,
 ::before {
@@ -24,6 +25,7 @@ h1 {
   border: 5px solid black;
   border-radius: 20px;
   background: url(images/stred.png) no-repeat center/cover;
+  position: relative;
   /*
 		tady asi budeš muset něco přidat, abys
 		pak mohla pozicovat kočky v rámci domečku
@@ -38,6 +40,10 @@ h1 {
 		kočka si svoje zamilované dopisy
 		nejraději čte v levém dolním rohu domečku
 	*/
+  position: absolute;
+  /* left: 0; */
+  /*není potřeba - default*/
+  bottom: 0;
 }
 
 .motyl {
@@ -48,11 +54,20 @@ h1 {
 		uprostřed domečku, protože tam má na
 		dovádění nejvíc místa
 	*/
+  position: absolute;
+  left: calc(700px / 2 - 70px);
+  top: calc(50% - 60px);
+  /*lepší je calc(50% - 118px / 2);*/
+  /*60px byl jen první odhad */
 }
 
 .kniha {
   width: 120px;
   height: 140px;
+  position: absolute;
+  top: -60px;
+  left: -70px;
+  /*půlka kočky, šlo by i s fcí transform(translate -50%)*/
   /*
 		kočka si ráda čte svoje knihy v klidu,
 		proto sedí v levém horním rohu domečku,
@@ -65,6 +80,9 @@ h1 {
 .sluchatka {
   width: 124px;
   height: 150px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
   /*
 		tahle kočka poslouchá hudbu a na tancování
 		si vybrala místo v pravém horním rohu domečku,
@@ -77,6 +95,9 @@ h1 {
 .spanek {
   width: 154px;
   height: 75px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   /*
 		kočka s myší je unavená, a proto chce jít
 		spát do pravého dolního rohu domečku
