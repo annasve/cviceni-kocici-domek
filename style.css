@@ -25,12 +25,12 @@ h1 {
   border: 5px solid black;
   border-radius: 20px;
   background: url(images/stred.png) no-repeat center/cover;
-  position: relative;
   /*
 		tady asi budeš muset něco přidat, abys
 		pak mohla pozicovat kočky v rámci domečku
 		a ne celé stránky
 	*/
+  position: relative;
 }
 
 .dopis {
@@ -55,19 +55,16 @@ h1 {
 		dovádění nejvíc místa
 	*/
   position: absolute;
-  left: calc(700px / 2 - 70px);
-  top: calc(50% - 60px);
-  /*lepší je calc(50% - 118px / 2);*/
-  /*60px byl jen první odhad */
+  left: calc(700px / 2 - (170px / 2));
+  /*700px / 2 je vlastně 50% */
+  top: calc(50% - 118px / 2);
+  /*první nápad: calc(50% - 60px); >> 60px byl jen první odhad, není to tak přesné*/
 }
+
 
 .kniha {
   width: 120px;
   height: 140px;
-  position: absolute;
-  top: -60px;
-  left: -70px;
-  /*půlka kočky, šlo by i s fcí transform(translate -50%)*/
   /*
 		kočka si ráda čte svoje knihy v klidu,
 		proto sedí v levém horním rohu domečku,
@@ -75,14 +72,18 @@ h1 {
 		nebyl její levý horní roh, ale její střed
 		(tj. vyčuhuje z domečku ven)
 	*/
+  position: absolute;
+  top: -60px;
+
+  left: -70px;
+  /*lze i calc(-140px / 2);*/
+
+  /*půlka kočky, šlo by i s fcí transform(translate -50%)*/
 }
 
 .sluchatka {
   width: 124px;
   height: 150px;
-  position: absolute;
-  right: 30px;
-  top: 30px;
   /*
 		tahle kočka poslouchá hudbu a na tancování
 		si vybrala místo v pravém horním rohu domečku,
@@ -90,6 +91,9 @@ h1 {
 		domečku a 30 px od horní hrany domečku - potřebuje
 		totiž na svůj tanec trochu prostoru
 	*/
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
 .spanek {
